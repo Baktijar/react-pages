@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Nav from './Nav/Nav';
+import Header from './Header/Header';
+import Content from './Content/Content';
 
 class App extends Component {
   render() {
+    const data = [
+      { url: "home", title: "Home" },
+      { url: "about-us", title: "About us" },
+      { url: "services", title: "Services" },
+      { url: "portfolio", title: "Portfolio" },
+      { url: "contacts", title: "Contacts" }
+    ];
+
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Nav data={data} />
+        <Header data={data[0]} />
+        <Content />
       </div>
     );
   }
